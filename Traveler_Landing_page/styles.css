@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+:root {
+  --accent: #ea918d;
+  --accentHover: #a5615e;
+  --light: #f5f9fc;
+  --dark: #304659;
+  --dark80: rgba(48, 70, 89, 0.8);
+  --dark60: rgba(48, 70, 89, 0.6);
+  --transitions: all 0.3s ease 0s;
+}
+
+* {
+  /* allow padding added to be inside elements and margins outside of elements  */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: auto; /* resizing browser will start shifting down content */
+}
+
+body {
+  background: linear-gradient(var(--dark60), var(--dark60)),
+    url(./Assets/Background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p,
+a,
+button {
+  font-family: "Lato", sans-serif;
+  color: var(--light);
+  text-decoration: none;
+}
+
+a,
+button,
+.logo {
+  cursor: pointer;
+}
+
+main {
+  height: 100%;
+  display: grid;
+
+  /* 8 column grid 
+      1fr - sets space that remainging
+      repeat -- 6 colums 1440 / 6 = 190px */
+  grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(
+      60px,
+      1fr
+    );
+}
+
+header {
+  grid-column: 2 / span 6;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+
+.links {
+  margin-left: auto;
+}
+
+.links a,
+.links button {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  transition: var(--transitions);
+}
+
+.links a {
+  margin-right: 50px;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.button__med {
+  border: none;
+  background-color: var(--accent);
+  padding: 8px 25px;
+  transition: var(--transitions);
+}
+.button__med:hover {
+  background-color: var(--accentHover);
+}
+
+.info {
+}
