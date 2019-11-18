@@ -8,6 +8,9 @@
   --dark80: rgba(48, 70, 89, 0.8);
   --dark60: rgba(48, 70, 89, 0.6);
   --transitions: all 0.3s ease 0s;
+
+  --fontFamily-Lato: "Lato", sans-serif;
+  --fontSize_17px: 1.0625rem;
 }
 
 * {
@@ -34,7 +37,7 @@ body {
 p,
 a,
 button {
-  font-family: "Lato", sans-serif;
+  font-family: var(--fontFamily-Lato);
   color: var(--light);
   text-decoration: none;
 }
@@ -58,6 +61,8 @@ main {
     );
 }
 
+/* --------------------- HEADER SECTION ---------------------- */
+
 header {
   grid-column: 2 / span 6;
 }
@@ -74,7 +79,7 @@ nav {
 
 .links a,
 .links button {
-  font-size: 1.0625rem;
+  font-size: var(--fontSize_17px);
   font-weight: 400;
   transition: var(--transitions);
 }
@@ -97,5 +102,126 @@ nav {
   background-color: var(--accentHover);
 }
 
+/* ------------------------ CONTENT SECTION ---------------------*/
 .info {
+  grid-column: 2 / span 4;
+}
+.hero__font {
+  color: var(--light);
+  font-family: var(--fontFamily-Lato);
+  font-weight: 700;
+  font-size: 4.375rem;
+}
+.icons {
+  display: flex;
+  margin-top: 55px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon__info {
+  margin: 0 80px 0 20px;
+}
+
+.icon__top {
+  font-size: var(--fontSize_17px);
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.icon__bottom {
+  font-size: 1.5625rem;
+  font-weight: 700;
+}
+
+/* ----------------------- FOOTER SECTION ----------------------*/
+
+.features {
+  grid-column: 2 / span 7;
+  background-color: var(--dark80);
+  align-self: end;
+  padding: 40px 0 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.feature {
+  display: flex;
+  margin: 0 60px 40px 0px;
+}
+
+.feature:nth-child(3) {
+  align-self: flex-start;
+}
+
+.feature img {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.feature__info {
+  margin-top: 10px;
+}
+
+.feature__top,
+.feature__cta {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.feature__cta {
+  cursor: pointer;
+  transition: var(--transitions);
+}
+
+.feature__cta:hover {
+  color: var(--accentHover);
+}
+
+.feature__bottom {
+  width: 180px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1100px) {
+  .icon img {
+    height: 55px;
+    width: auto;
+  }
+
+  .icon__top {
+    font-size: 1rem;
+  }
+
+  .icon__bottom {
+    font-size: 1.125rem;
+  }
+
+  .hero__font {
+    font-size: 2.1875rem;
+  }
+
+  .features {
+    grid-column: 1 / span 8;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .info {
+    grid-column: 2 / span 6;
+  }
+  .icons {
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-bottom: 20px;
+  }
 }
