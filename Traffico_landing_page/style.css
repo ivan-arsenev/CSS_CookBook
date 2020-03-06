@@ -1,0 +1,154 @@
+@import url(
+    https://fonts.googleapis.com/css?family=Rubik:300,
+    300italic,
+    regular,
+    italic,
+    500,
+    500italic,
+    700,
+    700italic,
+    900,
+    900italic
+);
+@import url(
+    https://fonts.googleapis.com/css?family=Roboto:100,
+    100italic,
+    300,
+    300italic,
+    regular,
+    italic,
+    500,
+    500italic,
+    700,
+    700italic,
+    900,
+    900italic
+);
+@import url(
+    https://fonts.googleapis.com/css?family=DM+Serif+Display:regular,
+    italic
+);
+
+:root {
+    --accent: #ee4d47;
+    --accentHover: #a5615e;
+    --light: #f5f9fc;
+    --dark: #304659;
+    --dark80: rgba(48, 70, 89, 0.8);
+    --dark60: rgba(48, 70, 89, 0.6);
+    --transitions: all 0.3s ease 0s;
+
+    --font-Rubic: 'Rubic', sans-serif;
+    --font-DmSerif: 'DM Serif Display Regular', sans-serif;
+    --fontSize_17px: 1.0625rem;
+}
+
+* {
+    /* allow padding added to be inside elements and margins outside of elements  */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: auto; /* resizing browser will start shifting down content */
+}
+
+body {
+    background: url(./Assets/Scene.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p,
+a,
+button {
+    font-family: var(--font-Rubic);
+    color: var(--light);
+    text-decoration: none;
+}
+
+a,
+button,
+.logo {
+    cursor: pointer;
+}
+
+main {
+    height: 100%;
+    display: grid;
+
+    /* 8 column grid 
+        1fr - sets space that remainging
+        repeat -- 6 colums 1440 / 6 = 190px */
+    grid-template-columns: minmax(60px, 1fr) repeat(8, minmax(75px, 190px)) minmax(
+            60px,
+            1fr
+        );
+}
+
+/* --------------------- HEADER SECTION ---------------------- */
+
+header {
+    grid-column: 2 / span 8;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    margin: 0 240px;
+}
+
+.links {
+    margin-left: auto;
+}
+
+.links a,
+.links button {
+    font-size: var(--fontSize_17px);
+    font-weight: 800;
+    transition: var(--transitions);
+}
+
+.links a {
+    margin-right: 50px;
+}
+
+.links a:hover {
+    color: var(--accent);
+}
+
+.button__med {
+    border: none;
+    background-color: var(--accent);
+    padding: 8px 25px;
+    transition: var(--transitions);
+}
+.button__med:hover {
+    background-color: var(--accentHover);
+}
+
+/* ------------------------ CONTENT SECTION ---------------------*/
+.info {
+    grid-column: 4 / span 4;
+    margin: 0 240px;
+}
+.hero__font {
+    color: var(--light);
+    font-family: 'DM Serif Display Regular';
+    font-weight: 700;
+    font-size: 100px;
+    margin-bottom: 20px;
+    width: 800px;
+}
+.button__large {
+    border: none;
+    background-color: var(--accent);
+
+    transition: var(--transitions);
+    padding: 21px 25px;
+}
