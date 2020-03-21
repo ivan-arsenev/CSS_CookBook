@@ -14,8 +14,7 @@ body {
 }
 
 .showcase {
-	background-color: $primary-color;
-	color: #fff;
+	@include set-background($primary-color);
 	height: 600px;
 
 	nav {
@@ -30,7 +29,10 @@ body {
 	li {
 		padding: 15px;
 	}
-
+	a {
+		text-decoration: none;
+		color: set-text-color($primary-color);
+	}
 	a:hover {
 		color: $secondary-color;
 	}
@@ -38,7 +40,7 @@ body {
 	&-content {
 		height: 100%;
 		display: flex;
-
+		margin-top: 30px;
 		img {
 			width: 40%;
 		}
@@ -46,15 +48,6 @@ body {
 			font-size: 50px;
 			line-height: 1.2;
 		}
-		p {
-			margin: 20px 0;
-		}
 	}
 }
-
-a {
-	color: #fff;
-	text-decoration: none;
-}
-
-
+@import 'mobile';

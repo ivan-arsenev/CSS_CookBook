@@ -1,5 +1,39 @@
 $font-stack: Arial, Helvetica, sans-serif;
 $light-color: #f4f4f4;
-$primary-color: #ffab0e;
-// $primary-color: #e0ffff;
-$secondary-color: #ff8700;
+//$primary-color:
+$primary-color: #e0ffff;
+$secondary-color: #ffab0e;
+
+// set text color based on bg
+@function set-text-color($color) {
+	@if (lightness($color) > 70) {
+		@return #333;
+	} @else {
+		@return #fff;
+	}
+}
+
+// Set background and text color
+@mixin set-background($color) {
+	background-color: $color;
+	color: set-text-color($color);
+}
+
+// margin and padding styles
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+	.m-#{$space} {
+		margin: #{$space}rem;
+	}
+	.my-#{$space} {
+		margin: #{$space}rem 0;
+	}
+
+	.p-#{$space} {
+		padding: #{$space}rem;
+	}
+	.py-#{$space} {
+		padding: #{$space}rem 0;
+	}
+}
